@@ -23,11 +23,12 @@ export default function Adminprofile(){
     }
 
     useEffect(()=>{
+        console.log("usereffect in admin profile")
         if(!admintoken){
             navigate("/adminsignin")
         }
         verifyToken()
-    },[admintoken])
+    },[])
 
 
     return(

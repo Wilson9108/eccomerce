@@ -33,7 +33,7 @@ useEffect(()=>{
   //   navigate("/")
   // }
 
-},[navigate])
+},[])
 
 const redirect  = userrole? "/userprofile":"/signin"
 
@@ -78,15 +78,6 @@ console.log(calculate)
         </li> */}
         {adminrole &&
         <>
-        {/* <li className="navitem">
-            <Link className="nav-link text-light mt-2" to="/userdata">USER DATA</Link>
-        </li>
-        <li className='navitem'>
-          <Link className='nav-link text-light mt-2' to="/productsdata">PRODUCTS DATA</Link>
-        </li>
-        <li className="navitem">
-          <Link className='nav-link text-light mt-2' to="/productsinsert">PRODUCTS INSERT</Link>
-        </li> */}
         <li className="nav-item dropdown text-light mt-2 mx-2" >
           <Link className="nav-link dropdown-toggle text-light" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             ALLDATA
@@ -102,18 +93,6 @@ console.log(calculate)
         </>
 
 }
-        {/* <li className="nav-item">
-          <Link className="nav-link text-light" to="Men">MEN</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link text-light " aria-disabled="true" to="Women">WOMEN</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link text-light" to="mobiles">MOBILES</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link text-light" to="electronics">ELECTRONICS</Link>
-        </li> */}
               <form className="d-flex mx-2" role="search">
         <input className="me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>setSearchProducts(e.target.value.trim())}/>
         <button className="btn btn-warning" type="button">Search</button>

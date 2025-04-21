@@ -7,10 +7,13 @@ const path = require("path")
 const cors = require("cors")
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+// console.log(path)
+const buildpath = path.join(__dirname,'../frontend/build')
+console.log(buildpath)
 
-// console.log(jwt)
 const jwt_secret_key = "12secret34"
 
+// console.log(jwt_secret_key)
 
 const multer  = require("multer")
 
@@ -21,7 +24,6 @@ app.use(express.json())
 const uploadFolder  = path.join(__dirname,'uploads')
 // console.log(uploadFolder)
 
-
 app.get('/productsData',(req,res)=>{
     db.query("select * from products as p inner join category as c on p.cid=c.cid",(err,result)=>{
         if(err){
@@ -31,6 +33,7 @@ app.get('/productsData',(req,res)=>{
         }
     })
 })
+
 app.get('/categoryData',(req,res)=>{
 
     db.query("select * from category",(err,result)=>{
@@ -63,7 +66,7 @@ const  storage = multer.diskStorage({
 // console.log(typeof storage)
 const upload = multer({storage})
 
-console.log(upload)
+// console.log(upload)
 
 app.get('/uploads/:filename',(req,res)=>{
     const {filename}=req.params
@@ -72,7 +75,6 @@ app.get('/uploads/:filename',(req,res)=>{
     // console.log(filepath)
     res.sendFile(filepath)
 })
-
 
 
 app.post('/uploadFile',upload.single('image'),(req,res)=>{
@@ -243,7 +245,6 @@ app.get('/userprofile',verifyToken,(req,res)=>{
         console.log("user not found ")
         res.status(404).send({message:"user not found"})
     }
-    
 })
 
 
@@ -388,6 +389,12 @@ app.delete('/deleteproductsdata/:id',(req,res)=>{
 })
 
 
+app.use(express.static(path.join(__dirname,'../frontend/build')))
+app.get('*',(_,res)=>{
+    console.log("all routes")
+    res.sendFile(path.join(buildpath,'index.html'))
+
+})
 
 
 

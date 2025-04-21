@@ -29,15 +29,14 @@ export default function UserProfile(){
             console.log("no token")
             navigate("/signin")
         }
-
         let response = await fetch("http://localhost:2025/userprofile",{
             method:"get",
             headers:{
                 'Authorization':`Bearer ${usertoken}`,
                 'Content-Type':'application/json'
             }
-           
         })
+        
         console.log(`response in userprofile ${response.status}`)
         console.log(response)
         let data   = await response.json()

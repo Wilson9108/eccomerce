@@ -33,7 +33,8 @@ export default function AdminSignin(){
        })
        console.log(response)
        let data = await response.json()
-       console.log(`data in admin signin ${data.token}`)
+       console.log(data)
+       console.log(`data in admin signin ${data.admintoken}`)
        let admintoken = data.admintoken
        if(response.status===404){
         // alert("Email is not exist")
@@ -41,7 +42,7 @@ export default function AdminSignin(){
        }
        if(response.status===200){
        localStorage.setItem("admintoken",admintoken)
-       console.log(localStorage.getItem('admin'))
+       console.log(localStorage.getItem('admintoken'))
         navigate("/adminprofile")
        } if(response.status===401){
         console.log("incorrect password")

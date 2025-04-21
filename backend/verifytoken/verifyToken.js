@@ -16,14 +16,11 @@ function verifyToken(req,res,next){
     jwt.verify(token,jwt_secret_key,(err,decoded)=>{
         if(err){
             return  res.status(404).send("invalid verifytoken")
-           
         }
         console.log("decoded from verifytoken " , decoded)
         req.user = decoded
         next()
     })
-    
-
 }
 
 
