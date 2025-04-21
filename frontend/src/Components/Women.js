@@ -3,23 +3,23 @@ import style from '../cssFiles/products.module.css'
 import {Link} from 'react-router-dom'
 import {myContext} from './Config'
 export default function Women() {
-    const {getData,fetchProductData,indianCurrency,fullTitle,handleTitle,ratingArray} = useContext(myContext)
+    const {getData,fetchProductData,indianCurrency,fullTitle,handleTitle} = useContext(myContext)
     const showWomenClothing = fetchProductData.filter(item=>item.category=== "women's clothing")
 
 //   for(let i=0; i<showWomenClothing.length-1; i++){
 //         let random = Math.floor(Math.random()*(i+1));
 //       [showWomenClothing[i],showWomenClothing[random]]=[showWomenClothing[random],showWomenClothing[i]]
 //    }
-let spanStyle={
-    color:"red",
-    padding:"0px 5px",
-    fontSize:"10px",
-    display:"inline-block",
-    backgroundColor:"red",
-    margin:"0px 0px 20px 0px",
-    color:"white",
-    borderRadius:"3px"
-}
+// let spanStyle={
+//     color:"red",
+//     padding:"0px 5px",
+//     fontSize:"10px",
+//     display:"inline-block",
+//     backgroundColor:"red",
+//     margin:"0px 0px 20px 0px",
+//     color:"white",
+//     borderRadius:"3px"
+// }
     return (
         <>
             <div className={`${style.productsContainer}`}>
@@ -33,7 +33,7 @@ let spanStyle={
                 <div className={`${style.productsCards}`}>
                     {showWomenClothing.map(products => (
                         <div className={`${style.productBox}`} key={products.id}>
-                            <img src={`http://localhost:2025/uploads/${products.image}`} className={`${style.cardImg}`}></img>
+                            <img src={`http://localhost:2025/uploads/${products.image}`} alt="women clothing" className={`${style.cardImg}`}></img>
                             <div className={`${style.cardBody}`}>
                                 <h5>{products.title.slice(0,20)} <span onClick={()=>handleTitle(products.id)}>{fullTitle===products.id? products.title.slice(): <Link className="text-primary text-decoration-none ">....more</Link>}</span> </h5>
                                 <code>{products.category}</code>

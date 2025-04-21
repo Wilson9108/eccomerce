@@ -1,10 +1,8 @@
 import  {useState,useEffect} from 'react'
-import {Link,useNavigate} from 'react-router-dom'
 import {ToastContainer,toast} from 'react-toastify'
 import style from  '../cssFiles/userdata.module.css'
 
 export default function UserData(){
-  const navigate  = useNavigate()
     const [fetchData,setFetchData]=useState([])
     const [updateValues,setUpdateValues]=useState({
       fullname:"",

@@ -25,7 +25,7 @@ export default function Signin(){
             }else{
                 setPasswordError("")
             }
-        let response  = await fetch("http://localhost:2025/usersignin",{
+        let response  = await fetch("/usersignin",{
             method:"POST",
             headers:{"Content-Type" : "application/json"},
             body:JSON.stringify({email,password})
