@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {Link} from 'react-router-dom'
+
 import style from '../cssFiles/footer.module.css'
 
 export default function Footer(){

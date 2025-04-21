@@ -1,12 +1,12 @@
-import {useContext,useState,useEffect} from 'react'
+import {useContext,useState} from 'react'
 import {myContext} from '../Config'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
 
 import style from './productsData.module.css'
 
 export default function ProductsData(){
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const [getProductId,setGetProductId] = useState(null)
     const [getDeleteId,setDeleteId]=useState("")
     const [values,setValues]=useState({

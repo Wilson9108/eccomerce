@@ -1,6 +1,6 @@
-import {useContext} from 'react'
+
 import './App.css';
-import {BrowserRouter,Routes,Route,useNavigate} from 'react-router-dom'
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import Homepage from './Components/Homepage'
 import Footer from './Components/Footer'
@@ -25,7 +25,6 @@ import Category from './Components/Products/Category'
 import ProductsData from './Components/Products/ProductsData'
 import  UserProfile from './Components/UserProfile'
 import Adminprofile from './Components/Admin/Adminprofile'
-import {myContext} from './Components/Config'
 
 const token = localStorage.getItem('token')
 console.log(token)

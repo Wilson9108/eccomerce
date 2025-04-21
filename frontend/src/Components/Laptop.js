@@ -4,23 +4,23 @@ import style from '../cssFiles/products.module.css'
 import { myContext } from './Config'
 
 function Laptop() {
-    const { getData, fetchProductData,indianCurrency,fullTitle,handleTitle,ratingArray} = useContext(myContext)
+    const { getData, fetchProductData,fullTitle,handleTitle} = useContext(myContext)
     const showElectronics = fetchProductData.filter(item => item.category === "laptops")
     // for(let i=0;i<showElectronics.length-1;i++){
     //     let random = Math.floor(Math.random()*(i+1));
     //     [showElectronics[i],showElectronics[random]]= [showElectronics[random],showElectronics[i]]
 
     // }
-    let spanStyle={
-        color:"red",
-        padding:"0px 5px",
-        fontSize:"10px",
-        display:"inline-block",
-        backgroundColor:"red",
-        margin:"0px 0px 20px 0px",
-        color:"white",
-        borderRadius:"3px"
-    }
+    // let spanStyle={
+    //     color:"red",
+    //     padding:"0px 5px",
+    //     fontSize:"10px",
+    //     display:"inline-block",
+    //     backgroundColor:"red",
+    //     margin:"0px 0px 20px 0px",
+    //     color:"white",
+    //     borderRadius:"3px"
+    // }
 
     
 

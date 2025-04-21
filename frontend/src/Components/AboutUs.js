@@ -34,7 +34,7 @@ export default function About(){
                 <div className={`${style.ourTeamProfiles}`}>
                     {teamData.map(data=>(
                     <div className={`${style.profileOne}`}>
-                        <img src={data.img} className={`${style.img}`}></img>
+                        <img src={data.img} className={`${style.img}`} alt='image'></img>
                         <div className={`${style.Name}`}><h3>{data.name}</h3></div>
                         <div className={`${style.designation}`}><h6>{data.designation}</h6></div>
                     </div>

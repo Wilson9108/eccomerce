@@ -5,23 +5,23 @@ import { Link } from 'react-router-dom'
 import { myContext } from './Config'
 
 export default function Men() {
-    const { fetchProductData,getData,indianCurrency,fullTitle,handleTitle, ratingArray} = useContext(myContext)
+    const { fetchProductData,getData,fullTitle,handleTitle} = useContext(myContext)
     const showMensClothing = fetchProductData.filter(item => item.category === "men's clothing")
    
     // for(let i=0; i<showMensClothing.length-1; i++){
     //     let random = Math.floor(Math.random()*(i+1));
     //     [showMensClothing[i],showMensClothing[random]]=[showMensClothing[random],showMensClothing[i]]
     // }
-    let spanStyle={
-        color:"red",
-        padding:"0px 5px",
-        fontSize:"10px",
-        display:"inline-block",
-        backgroundColor:"red",
-        margin:"0px 0px 20px 0px",
-        color:"white",
-        borderRadius:"3px"
-    }
+    // let spanStyle={
+    //     color:"red",
+    //     padding:"0px 5px",
+    //     fontSize:"10px",
+    //     display:"inline-block",
+    //     backgroundColor:"red",
+    //     margin:"0px 0px 20px 0px",
+    //     color:"white",
+    //     borderRadius:"3px"
+    // }
 
     
     return (

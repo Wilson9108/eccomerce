@@ -1,5 +1,5 @@
 import {useState,useEffect} from 'react'
-import { useParams,Link,useNavigate } from 'react-router-dom'
+import { useParams,useNavigate } from 'react-router-dom'
 import style from '../cssFiles/userupdate.module.css'
 export default function UserUpdate(){
     let {userid}=useParams()

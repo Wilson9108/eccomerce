@@ -1,20 +1,20 @@
 import {useState,useContext} from 'react'
-import {Link,useNavigate} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 // import style from '../cssFiles/products.module.css'
 import cartstyle from '../cssFiles/addtocart.module.css'
 import { myContext } from './Config'
 export default function AddToCart(){
     const [fullTitle,setFullTitle]=useState("")
-    const navigate  = useNavigate()
-    const {cartData,incrementQuantity,decrementQuantity,removeProduct,totalQuantityCalculate,indianCurrency} =useContext(myContext)
+    // const navigate  = useNavigate()
+    const {cartData,incrementQuantity,decrementQuantity,removeProduct,totalQuantityCalculate} =useContext(myContext)
 
     cartData.forEach(item=>{
         console.log("cart data " , item)
     })
 
-    const handleClick=()=>{
-        navigate("/allproducts")
-    }
+    // const handleClick=()=>{
+    //     navigate("/allproducts")
+    // }
     
     console.log('before functions fulltitle' , fullTitle)
     const  handleTitle=(id)=>{
@@ -37,7 +37,7 @@ export default function AddToCart(){
                         {cartData.map(product => (
                             <div className={`${cartstyle.productBox}`} key={product.id}>
                                 <div className="d-flex justify-content-center align-items-center">
-                                    <img src={`http://localhost:2025/uploads/${product.image}`} className={`${cartstyle.cardImg}`}></img>
+                                    <img src={`http://localhost:2025/uploads/${product.image}`} alt="products" className={`${cartstyle.cardImg}`}></img>
                                 </div>
                                 <div className={`${cartstyle.cardBody}`}>
                                     <h5>{product.title.slice(0,40)} <span onClick={()=>handleTitle(product.id)}>{fullTitle===product.id?product.title.slice():<Link className='text-decoration-none text-primary'>...more</Link>}</span> </h5>

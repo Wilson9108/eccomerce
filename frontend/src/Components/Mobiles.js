@@ -4,23 +4,23 @@ import {Link} from 'react-router-dom'
 import {myContext} from './Config'
 
 export  default function Mobiles(){
-    const {getData,fetchProductData,indianCurrency,fullTitle,handleTitle,ratingArray}  = useContext(myContext)
+    const {getData,fetchProductData,fullTitle,handleTitle}  = useContext(myContext)
     const showJewelery = fetchProductData.filter(item=>item.category==="mobiles")
 
     // for(let i=0; i<showJewelery.length-1; i++){
     //     let random = Math.floor(Math.random()*(i+1));
     //     [showJewelery[i],showJewelery[random]]=[showJewelery[random],showJewelery[i]]
     // }
-    let spanStyle={
-        color:"red",
-        padding:"0px 5px",
-        fontSize:"10px",
-        display:"inline-block",
-        backgroundColor:"red",
-        margin:"0px 0px 20px 0px",
-        color:"white",
-        borderRadius:"3px"
-    }
+    // let spanStyle={
+    //     color:"red",
+    //     padding:"0px 5px",
+    //     fontSize:"10px",
+    //     display:"inline-block",
+    //     backgroundColor:"red",
+    //     margin:"0px 0px 20px 0px",
+    //     color:"white",
+    //     borderRadius:"3px"
+    // }
 
     return (
         <>

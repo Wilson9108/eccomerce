@@ -1,8 +1,7 @@
-import {useState,useEffect} from 'react'
+import {useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 export default function Adminprofile(){
     const navigate = useNavigate()
-    const [adminDetails,setAdminDetails]=useState("")
     let admintoken = localStorage.getItem("admintoken")
 
     async function verifyToken(){

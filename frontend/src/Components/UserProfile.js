@@ -1,8 +1,7 @@
-import {useContext, useEffect,useState } from 'react'
+import {useEffect,useState } from 'react'
 import style from '../cssFiles/userprofile.module.css'
 import {Link,useNavigate} from 'react-router-dom'
 
-import { myContext } from './Config'
 
 export default function UserProfile(){
   

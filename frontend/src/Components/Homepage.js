@@ -1,10 +1,10 @@
 import React from 'react';
-import {useState,useEffect,useContext} from 'react'
+import {useContext} from 'react'
 import style from '../cssFiles/Homepage.module.css'
 import {Link} from 'react-router-dom'
 import {myContext} from './Config'
 export default function Homepage(){
-    const {fetchProductData,getData,indianCurrency,fullTitle,handleTitle,ratingArray} = useContext(myContext)
+    const {fetchProductData,getData,fullTitle,handleTitle} = useContext(myContext)
     const limitedProductsShow = fetchProductData.slice(0,12)
     // const topRated= fetchProductData.filter(item=>item.rating.rate>3)
     // console.log(ratingArray)

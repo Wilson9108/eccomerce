@@ -1,5 +1,5 @@
 import {useContext,useState,useEffect} from 'react'
-import {Link, Navigate, useNavigate}  from 'react-router-dom'
+import {Link, useNavigate}  from 'react-router-dom'
 import style from '../cssFiles/Navbar.module.css'
 import {myContext} from './Config'
 export default function Navbar(){
@@ -7,7 +7,7 @@ export default function Navbar(){
   const {cartData,fetchProductData} = useContext(myContext)
   const [adminrole,setAdminrole]=useState("")
   const [admintoken, setAdminToken] = useState("")
-  const [quantity,setQuantity]=useState({})
+  // const [quantity,setQuantity]=useState({})
   console.log("admin role from navbar " , adminrole)
   console.log("admin token from navbar " , admintoken)
 
