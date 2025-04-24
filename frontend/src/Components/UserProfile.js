@@ -28,7 +28,7 @@ export default function UserProfile(){
             console.log("no token")
             navigate("/signin")
         }
-        let response = await fetch("http://localhost:2025/userprofile",{
+        let response = await fetch("/userprofile",{
             method:"get",
             headers:{
                 'Authorization':`Bearer ${usertoken}`,
