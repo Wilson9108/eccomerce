@@ -26,7 +26,7 @@ export default function AdminSignin(){
        
         console.log({adminEmail,adminPassword})
         try{
-       let response = await fetch("http://localhost:2025/admin/signin",{
+       let response = await fetch("/admin/signin",{
         method:"POST",
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({adminEmail,adminPassword})

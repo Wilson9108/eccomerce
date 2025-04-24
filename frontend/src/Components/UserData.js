@@ -20,7 +20,7 @@ export default function UserData(){
     const [getId,setGetId]=useState("")
 
     async function userData(){
-        let response = await fetch("http://localhost:2025/api/users")
+        let response = await fetch("/api/users")
         let data = await response.json()
         setFetchData(data)
       }
@@ -38,7 +38,7 @@ export default function UserData(){
     const handleDelete = async(id)=>{
         try{
         console.log("id from handledelete " + id)
-        let response = await fetch(`http://localhost:2025/userdelete/${id}`,{
+        let response = await fetch(`/userdelete/${id}`,{
             method:"delete"
         })
         let data = response.json()

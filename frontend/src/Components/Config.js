@@ -20,7 +20,7 @@ export default function Config(){
     }
     // console.log(fetchProductData)
     async function fetchCategoryData(){
-        let response = await fetch("http://localhost:2025/categoryData")
+        let response = await fetch("/categoryData")
         let data = await response.json()
         // console.log(data)
         setCategoryData(data)

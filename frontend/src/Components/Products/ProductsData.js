@@ -62,7 +62,7 @@ export default function ProductsData(){
             setPriceError("")
         }
         
-        let response = await fetch(`http://localhost:2025/updateproductsdata/${getProductId}`,{
+        let response = await fetch(`/updateproductsdata/${getProductId}`,{
             method:"put",
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({values})

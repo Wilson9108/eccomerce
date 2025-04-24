@@ -17,7 +17,7 @@ export default function UserUpdate(){
 
 
     const fetchDataWithId= async()=>{
-        let response = await fetch(`http://localhost:2025/api/users/${userid}`)
+        let response = await fetch(`/api/users/${userid}`)
         let data =await response.json()
              setFullName(data[0].user_name)
             setEmail(data[0].user_email)
@@ -60,7 +60,7 @@ export default function UserUpdate(){
             return 
         }else{
         
-        let response = await fetch(`http://localhost:2025/userupdate/${userid}`,{
+        let response = await fetch(`/userupdate/${userid}`,{
             method:"put",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({fullname,email,mobilenumber,state})

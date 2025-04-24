@@ -24,7 +24,7 @@ export default function  AdminSignup (){
             setPasswordError("")
         }
         try{
-        let response = await fetch("http://localhost:2025/admin/signup",{
+        let response = await fetch("/admin/signup",{
             method:"post",
             headers:{'Content-Type':"application/json"},
             body:JSON.stringify({adminEmail,adminPassword})

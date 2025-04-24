@@ -33,7 +33,7 @@ export default function Women() {
                 <div className={`${style.productsCards}`}>
                     {showWomenClothing.map(products => (
                         <div className={`${style.productBox}`} key={products.id}>
-                            <img src={`http://localhost:2025/uploads/${products.image}`} alt="women clothing" className={`${style.cardImg}`}></img>
+                            <img src={`/uploads/${products.image}`} alt="women clothing" className={`${style.cardImg}`}></img>
                             <div className={`${style.cardBody}`}>
                                 <h5>{products.title.slice(0,20)} <span onClick={()=>handleTitle(products.id)}>{fullTitle===products.id? products.title.slice(): <Link className="text-primary text-decoration-none ">....more</Link>}</span> </h5>
                                 <code>{products.category}</code>

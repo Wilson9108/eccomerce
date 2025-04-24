@@ -59,7 +59,7 @@ export default function Homepage(){
                     
                 {limitedProductsShow.map(products=>(
                     <div className={`${style.productBox}`} key={products.id}>
-                    <img src={`http://localhost:2025/uploads/${products.image}`} alt="products" className={`${style.cardImg}`}></img>
+                    <img src={`/uploads/${products.image}`} alt="products" className={`${style.cardImg}`}></img>
                     <div className={`${style.cardBody}`}>
                         <h5>{ products.title!==null? products.title.slice(0,20):products.title} {products.title!=null? <span onClick= {()=>handleTitle(products.id)}>{fullTitle===products.id ?products.title.slice():<Link className="text-primary text-decoration-none">....more</Link>}</span>:""}</h5>
                         <code>{products.category}</code>

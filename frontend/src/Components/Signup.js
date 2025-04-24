@@ -63,7 +63,7 @@ export default function Signup(){
         }else{
             setStateError("")
         }
-        let response = await fetch("http://localhost:2025/usersignup",{
+        let response = await fetch("/usersignup",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({fullName,email,password,mobileNumber,state})

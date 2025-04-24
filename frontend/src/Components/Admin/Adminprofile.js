@@ -7,7 +7,7 @@ export default function Adminprofile(){
     async function verifyToken(){
        
         console.log("admintoken from  admin profile",admintoken)
-        let response = await fetch("http://localhost:2025/adminprofile",{
+        let response = await fetch("/adminprofile",{
             method:"GET",
             headers:{
                 'authorization':`Bearer ${admintoken}`,
