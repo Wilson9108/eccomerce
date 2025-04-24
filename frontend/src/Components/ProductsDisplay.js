@@ -7,6 +7,7 @@ const ProductsDisplay = () => {
   const [cartDetails,setCartDetails]=useState([])
   const {getData,fetchProductData,fullTitle,handleTitle,cartData}=useContext(myContext)
   console.log(cartData)
+  console.log(fetchProductData)
   // for(let i=0; i<fetchProductData.length-1; i++){
   //   let random = Math.floor(Math.random()*(i+1));
   //   [fetchProductData[i],fetchProductData[random]]=[fetchProductData[random],fetchProductData[i]]
@@ -40,7 +41,7 @@ const ProductsDisplay = () => {
                 {fetchProductData.map(products=>{
                   // console.log(products)
                    return  <div className={`${style.productBox}`} key={products.id}>
-                    <img src= {`/uploads/${products.image}`} alt="products" className={`${style.cardImg}`}></img>
+                    <img src= {`https://wilson-eccomerce-qw13.onrender.com/uploads/${products.image}`} alt="products" className={`${style.cardImg}`}></img>
                     <div className={`${style.cardBody}`}>
                      <h5>{products.title.slice(0,20)}<span onClick={()=>handleTitle(products.id)}>{fullTitle===products.id? products.title.slice() : <Link className="text-primary text-decoration-none">....more</Link>}</span></h5>
                         <code>{products.category}</code>
