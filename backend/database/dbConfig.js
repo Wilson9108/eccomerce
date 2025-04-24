@@ -2,10 +2,10 @@ const mysql = require("mysql2")
 
 
 let db = mysql.createConnection({
-    port:3306,
-    host:"localhost",
+    port:50852,
+    host:"metro.proxy.rlwy.net",
     user:"root",
-    password:"root123",
+    password:"KBCEeExCIPTgJeKIIPLqeahrASKhHCeb",
     database:"eccomerce"
 })
 
