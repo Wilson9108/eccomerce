@@ -37,7 +37,7 @@ export default function Men() {
                 <div className={`${style.productsCards}`}>
                     {showMensClothing.map(products => (
                         <div className={`${style.productBox}`} key={products.id}>
-                            <img src={`/uploads/${products.image}`} className={`${style.cardImg}`}></img>
+                            <img src={`https://wilson-eccomerce-qw13.onrender.com/uploads/${products.image}`} className={`${style.cardImg}`}></img>
                             <div className={`${style.cardBody}`}>
                                 <h5>{products.title.slice(0,25)} <span onClick={()=>handleTitle(products.id)}>{fullTitle===products.id? products.title.slice(): <Link className="text-primary text-decoration-none">....more</Link>}</span> </h5>
                                 <code>{products.category}</code>
