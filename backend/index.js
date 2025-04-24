@@ -160,7 +160,8 @@ app.post('/usersignup',(req,res)=>{
     db.query(insertQuery,[fullName,email,hash,mobileNumber,state],(err,result)=>{
         if(err){
             console.log("something went wrong in insert user signup")
-        }if(result.affectedRows>0){
+        }else{
+            console.log(result)
           return res.status(200).json({success:"user inserted Successfully"})
         }
     }) 
