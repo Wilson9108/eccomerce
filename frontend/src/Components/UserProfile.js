@@ -28,7 +28,7 @@ export default function UserProfile(){
             console.log("no token")
             navigate("/signin")
         }
-        let response = await fetch("/userprofile",{
+        let response = await fetch("https://wilson-eccomerce-qw13.onrender.com/userprofile",{
             method:"get",
             headers:{
                 'Authorization':`Bearer ${usertoken}`,
