@@ -13,8 +13,9 @@ export default function Config(){
 // fakestoreapiproductsfetching    
     
     async function fetchData(){
-        let response = await fetch("http://localhost:2025/productsData")
+        let response = await fetch("/productsData")
         let data = await response.json()
+        console.log(data)
         setFetchProductData(data)
     }
     // console.log(fetchProductData)
