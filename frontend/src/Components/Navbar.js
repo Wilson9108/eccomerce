@@ -85,7 +85,7 @@ console.log(calculate)
           <ul className="dropdown-menu" style={{backgroundColor:"rgb(128, 83, 28)"}}> 
             <li><Link className="dropdown-item  text-light" style={{backgroundColor:"rgb(128, 83, 28)"}} to="/userdata">USER DATA</Link></li>
             <hr></hr>
-            <li><Link className="dropdown-item text-light" to="/productsdata" style={{backgroundColor:"rgb(128, 83, 28)"}}>PRODUCTS DATA</Link></li>
+            <li><Link className="dropdown-item text-light" to="/products" style={{backgroundColor:"rgb(128, 83, 28)"}}>PRODUCTS DATA</Link></li>
           </ul>
         </li>
             <li className='navitem text-light mt-2'><Link className="dropdown-item mt-2 text-light" to="/productsinsert">PRODUCTS INSERT</Link></li>

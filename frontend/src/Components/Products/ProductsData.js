@@ -86,7 +86,7 @@ export default function ProductsData(){
     }
 
     const deleteProductData= async(id)=>{
-        let response = await fetch(`http://localhost:2025/deleteproductsdata/${id}`,{
+        let response = await fetch(`/deleteproductsdata/${id}`,{
             method:"delete"
         })
         toast.success("Deleted Successfully",{

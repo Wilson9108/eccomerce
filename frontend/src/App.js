@@ -62,7 +62,7 @@ function App() {
       <Route path="/productsinsert" element={<ProductsInsert/>}></Route>
       <Route path="/userupdate/:userid" element={<UserUpdate/>}></Route>
       <Route path="/category" element={<Category/>}></Route>
-      <Route path="/productsdata" element={<ProductsData/>}></Route>
+      <Route path="/products" element={<ProductsData/>}></Route>
       <Route path='/userprofile' element={<UserProfile />}></Route>
       <Route path='/adminprofile' element={<Adminprofile/>}></Route>
       <Route path="*"element={<Notfound/>}></Route>
