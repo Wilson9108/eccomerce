@@ -15,7 +15,7 @@ export default function Category(){
         }else{
             setCategoryError("")
         }
-        let response = await fetch('http://localhost:2025/categoryinsert',{
+        let response = await fetch('/categoryinsert',{
             method:'post',
             headers:{'Content-Type':'application/json'}
             ,body:JSON.stringify({category})

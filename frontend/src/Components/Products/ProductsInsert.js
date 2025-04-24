@@ -16,7 +16,7 @@ export default function  ProductsInsert(){
     const [imageDataError,setImageDataError]=useState("")
 
     async function categoryData(){
-        let response = await fetch("http://localhost:2025/categoryData")
+        let response = await fetch("/categoryData")
         let data = await response.json()
         console.log(data)
         setCategory(data)

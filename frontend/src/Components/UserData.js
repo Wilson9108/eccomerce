@@ -105,7 +105,7 @@ export default function UserData(){
       }else{
         setStateError("")
       }
-      let response = await fetch(`http://localhost:2025/userupdate/${getUserData}`,{
+      let response = await fetch(`/userupdate/${getUserData}`,{
         method:"put",
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({updateValues})
