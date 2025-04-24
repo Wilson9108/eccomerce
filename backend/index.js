@@ -144,6 +144,7 @@ app.get('/api/users/:id',(req,res)=>{
 
 app.post('/usersignup',(req,res)=>{
     let {fullName,email,password,mobileNumber,state}=req.body
+    console.log(req.body)
     const insertQuery = "INSERT INTO USER (USER_NAME,USER_EMAIL,password,USER_MOBILE,USER_STATE) VALUES(?,?,?,?,?)"
     const emailExist = "select * from user where user_email =?"
     db.query(emailExist,[email],(emailerr,emailresult)=>{
@@ -159,7 +160,7 @@ app.post('/usersignup',(req,res)=>{
             }
     db.query(insertQuery,[fullName,email,hash,mobileNumber,state],(err,result)=>{
         if(err){
-            console.log("something went wrong in insert user signup")
+            console.log("something went wrong in insert user signup",err.message)
         }else{
             console.log(result)
           return res.status(200).json({success:"user inserted Successfully"})
