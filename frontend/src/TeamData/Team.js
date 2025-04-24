@@ -26,7 +26,7 @@ export  const teamData =[
     },
     {
         "img":wonderWomen,
-        "name":"Wonder Women",
+        "name":"Baby Susseila Kancharla",
         "designation":"Engineering Manager"
     },
     {
