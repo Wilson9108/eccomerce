@@ -74,7 +74,7 @@ export default function  ProductsInsert(){
        formData.append('price',price)
        formData.append('category',selectCategory)
         console.log(typeof formData)
-        let response = await fetch('http://localhost:2025/uploadFile',{
+        let response = await fetch('/uploadFile',{
             method:'post',
             body:formData
         })
