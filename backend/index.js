@@ -74,7 +74,7 @@ app.get('/uploads/:filename',(req,res)=>{
     // console.log("filename " ,  filename)
     const filepath = path.join(__dirname,'uploads',filename)
     // console.log(filepath)
-    res.sendFile(filepath)
+    return res.sendFile(filepath)
 })
 
 
