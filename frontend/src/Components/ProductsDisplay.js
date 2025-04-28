@@ -5,7 +5,7 @@ import { myContext } from './Config'
 const ProductsDisplay = () => {
   const navigate = useNavigate()
   const [cartDetails,setCartDetails]=useState([])
-  const {getData,fetchProductData,fullTitle,handleTitle,cartData}=useContext(myContext)
+  const {getData,fetchProductData,fullTitle,handleTitle,cartData,isAdminLoggedIn}=useContext(myContext)
   console.log(cartData)
   console.log(fetchProductData)
   // for(let i=0; i<fetchProductData.length-1; i++){
@@ -51,7 +51,9 @@ const ProductsDisplay = () => {
                         ))} */}
                          {/* <span>{products.rating.rate}</span> */}
                         <br></br>
+                        {!isAdminLoggedIn &&
                     <Link className={`${style.AddToCartBtn}`} onClick={(e)=>{getData({...products,quantity:1});handleAddToCart({...products,quantity:1})}}>Add to Cart</Link>
+                        }
                     </div>
                     </div>
 })}

@@ -4,7 +4,7 @@ import style from '../cssFiles/Homepage.module.css'
 import {Link} from 'react-router-dom'
 import {myContext} from './Config'
 export default function Homepage(){
-    const {fetchProductData,getData,fullTitle,handleTitle} = useContext(myContext)
+    const {fetchProductData,getData,fullTitle,handleTitle,isAdminLoggedIn} = useContext(myContext)
     const limitedProductsShow = fetchProductData.slice(0,12)
     // const topRated= fetchProductData.filter(item=>item.rating.rate>3)
     // console.log(ratingArray)
@@ -68,8 +68,9 @@ export default function Homepage(){
                             <span style={{color:products.rating.rate>index?"rgb(246, 228, 41)":"",fontSize:"22px",display:"inline-block",margin:"0px 0px 10px 0px"}}>&#128970;</span>
                         ))} */}
                         <br></br>
-                       
+                       {!isAdminLoggedIn &&
                     <Link to="/cart"className={`${style.AddToCartBtn}`} onClick={()=>getData({...products,quantity:1})}>Add to Cart</Link>
+                       }
                     </div>
                     </div>
                  ))}

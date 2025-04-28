@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import {myContext} from './Config'
 
 export  default function Mobiles(){
-    const {getData,fetchProductData,fullTitle,handleTitle}  = useContext(myContext)
+    const {getData,fetchProductData,fullTitle,handleTitle,isAdminLoggedIn}  = useContext(myContext)
     const showJewelery = fetchProductData.filter(item=>item.category==="mobiles")
 
     // for(let i=0; i<showJewelery.length-1; i++){
@@ -45,7 +45,9 @@ export  default function Mobiles(){
                                 <span style={{color:products.rating.rate>index?"rgb(246, 228, 41)":""}} className={`${style.starRating}`}>&#128970;</span>
                             ))} */}
                         <br></br>
+                        {!isAdminLoggedIn &&
                     <Link to="/cart"className={`${style.AddToCartBtn}`} onClick={()=>getData({...products,quantity:1})}>Add to Cart</Link>
+                        }
                     </div>
                     </div>
                  ))}

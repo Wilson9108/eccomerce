@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 import { myContext } from './Config'
 
 export default function Men() {
-    const { fetchProductData,getData,fullTitle,handleTitle} = useContext(myContext)
+    const { fetchProductData, getData, fullTitle, handleTitle, isAdminLoggedIn } = useContext(myContext)
     const showMensClothing = fetchProductData.filter(item => item.category === "men's clothing")
-   
+
     // for(let i=0; i<showMensClothing.length-1; i++){
     //     let random = Math.floor(Math.random()*(i+1));
     //     [showMensClothing[i],showMensClothing[random]]=[showMensClothing[random],showMensClothing[i]]
@@ -23,12 +23,12 @@ export default function Men() {
     //     borderRadius:"3px"
     // }
 
-    
+
     return (
         <>
             <div className={`${style.productsContainer}`}>
                 <div className={`${style.productsTitleCon}`}>
-                <h1> <Link to="/allproducts" >All Products </Link></h1> 
+                    <h1> <Link to="/allproducts" >All Products </Link></h1>
                     <h1> <Link to="/men" className="mx-5">Men</Link></h1>
                     <h1><Link to="/women">Women</Link></h1>
                     <h1><Link to="/mobiles">Mobiles</Link></h1>
@@ -39,7 +39,7 @@ export default function Men() {
                         <div className={`${style.productBox}`} key={products.id}>
                             <img src={`/uploads/${products.image}`} className={`${style.cardImg}`}></img>
                             <div className={`${style.cardBody}`}>
-                                <h5>{products.title.slice(0,25)} <span onClick={()=>handleTitle(products.id)}>{fullTitle===products.id? products.title.slice(): <Link className="text-primary text-decoration-none">....more</Link>}</span> </h5>
+                                <h5>{products.title.slice(0, 25)} <span onClick={() => handleTitle(products.id)}>{fullTitle === products.id ? products.title.slice() : <Link className="text-primary text-decoration-none">....more</Link>}</span> </h5>
                                 <code>{products.category}</code>
                                 <p><code><del>${Math.round(products.price)}</del></code> {Math.round(products.price)}/-</p>
                                 {/* <span  style={spanStyle}>{products.rating.rate}{'\u00A0'}&#128970;</span> */}
@@ -47,7 +47,9 @@ export default function Men() {
                                 <span style={{color:products.rating.rate>index?"rgb(246, 228, 41)":""}} className={`${style.starRating}`}>&#128970;</span>
                             ))} */}
                                 <br></br>
-                                <Link to="/cart" className={`${style.AddToCartBtn}`} onClick={() => getData({ ...products, quantity: 1 })}>Add to Cart</Link>
+                                {!isAdminLoggedIn &&
+                                    <Link to="/cart" className={`${style.AddToCartBtn}`} onClick={() => getData({ ...products, quantity: 1 })}>Add to Cart</Link>
+                                }
                             </div>
                         </div>
                     ))}

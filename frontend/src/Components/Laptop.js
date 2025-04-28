@@ -4,7 +4,7 @@ import style from '../cssFiles/products.module.css'
 import { myContext } from './Config'
 
 function Laptop() {
-    const { getData, fetchProductData,fullTitle,handleTitle} = useContext(myContext)
+    const { getData, fetchProductData,fullTitle,handleTitle,isAdminLoggedIn} = useContext(myContext)
     const showElectronics = fetchProductData.filter(item => item.category === "laptops")
     // for(let i=0;i<showElectronics.length-1;i++){
     //     let random = Math.floor(Math.random()*(i+1));
@@ -47,7 +47,9 @@ function Laptop() {
                                 <span style={{color:products.rating.rate>index?"rgb(246, 228, 41)":""}} className={`${style.starRating}`}>&#128970;</span>
                             ))} */}
                                 <br></br>
+                                {!isAdminLoggedIn  &&
                                 <Link to="/cart" className={`${style.AddToCartBtn}`} onClick={() => getData({ ...products, quantity: 1 })}>Add to Cart</Link>
+}
                             </div>
                         </div>
                     ))}

@@ -15,7 +15,6 @@ export default function Navbar(){
   cartData.map(item=>{
 console.log("item quanity " + item.quantity)
 return cartQuantity += item.quantity
-
 })
 
 console.log("quantity " + cartQuantity)
@@ -51,6 +50,10 @@ function  handleAdminLogOut(){
   setIsAdminLoggedIn(false)
   navigate("/")
 }
+useEffect(()=>{
+
+
+},[handleAdminLogOut])
 
 let calculate =   cartData.reduce((acc,curr)=>acc+curr.quantity,0)
 console.log(calculate)
