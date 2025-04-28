@@ -51,8 +51,7 @@ function  handleAdminLogOut(){
   navigate("/")
 }
 useEffect(()=>{
-
-
+  navigate("/")
 },[handleAdminLogOut])
 
 let calculate =   cartData.reduce((acc,curr)=>acc+curr.quantity,0)
