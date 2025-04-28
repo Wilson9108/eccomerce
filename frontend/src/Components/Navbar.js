@@ -51,6 +51,7 @@ function  handleAdminLogOut(){
   navigate("/")
 }
 useEffect(()=>{
+  navigate("/")
 },[handleAdminLogOut])
 
 let calculate =   cartData.reduce((acc,curr)=>acc+curr.quantity,0)
@@ -133,7 +134,7 @@ console.log(calculate)
         }
         {isAdminLoggedIn &&
         <li className='navitem'>
-          <Link className=" btn btn-primary mx-4" onClick={()=>handleAdminLogOut()} > logout {'\u00a0'} <i class="fa-solid fa-person-walking-dashed-line-arrow-right fa-xl"></i> </Link>
+          <button className=" btn btn-primary mx-4" onClick={()=>handleAdminLogOut()} > logout {'\u00a0'} <i class="fa-solid fa-person-walking-dashed-line-arrow-right fa-xl"></i> </button>
            </li>
 }
       </ul>
