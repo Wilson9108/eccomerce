@@ -48,6 +48,7 @@ function  handleAdminLogOut(){
   localStorage.removeItem("adminrole")
   setAdminToken(null)
   setAdminrole(null)
+  setIsAdminLoggedIn(false)
   navigate("/")
 }
 
