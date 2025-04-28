@@ -1,9 +1,10 @@
-import {useState} from 'react'
+import {useContext, useState} from 'react'
 import {Link,useNavigate} from 'react-router-dom'
 import style from './admin.module.css'
-
+import { myContext } from '../Config'
 
 export default function AdminSignin(){
+    const {setIsAdminLoggedIn}=useContext(myContext)
     const navigate = useNavigate()
     const [adminEmail,setAdminEmail]=useState("")
     const [adminPassword,setAdminPassword]=useState("")
@@ -43,6 +44,7 @@ export default function AdminSignin(){
        if(response.status===200){
        localStorage.setItem("admintoken",admintoken)
        console.log(localStorage.getItem('admintoken'))
+       setIsAdminLoggedIn(true)
         navigate("/adminprofile")
        } if(response.status===401){
         console.log("incorrect password")

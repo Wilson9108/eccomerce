@@ -4,7 +4,7 @@ import style from '../cssFiles/Navbar.module.css'
 import {myContext} from './Config'
 export default function Navbar(){
   const navigate = useNavigate()
-  const {cartData,fetchProductData} = useContext(myContext)
+  const {cartData,fetchProductData,isAdminLoggedIn,setIsAdminLoggedIn} = useContext(myContext)
   const [adminrole,setAdminrole]=useState("")
   const [admintoken, setAdminToken] = useState("")
   // const [quantity,setQuantity]=useState({})
@@ -24,10 +24,16 @@ const userrole = localStorage.getItem('userrole')
 console.log("userrole from navbar.js",userrole)
 
 useEffect(()=>{
+  
   const arole = localStorage.getItem("adminrole")
   const  atoken = localStorage.getItem('admintoken')
+  if(arole && atoken){
   setAdminToken(atoken)
   setAdminrole(arole)
+  setIsAdminLoggedIn(true)
+  }else{
+    setIsAdminLoggedIn(false)
+  }
 
   // if(atoken){
   //   navigate("/")
@@ -76,7 +82,7 @@ console.log(calculate)
         {/* <li className="navitem">
             <Link className="nav-link text-light mt-2" to="/adminsignin">ADMIN</Link>
         </li> */}
-        {adminrole &&
+        {isAdminLoggedIn &&
         <>
         <li className="nav-item dropdown text-light mt-2 mx-2" >
           <Link className="nav-link dropdown-toggle text-light" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -111,7 +117,7 @@ console.log(calculate)
         <li className="navitem">
             <Link className="nav-link text-light" to="ContactUs">CONTACT US</Link>
         </li>
-        {!adminrole &&
+        {!isAdminLoggedIn &&
          <>
         <li className="navitem">
             <Link className="nav-link" to="cart"><i className="fa-solid fa-cart-shopping fa-xl text-light"></i><span><sup className=" bg-warning rounded-circle text-dark p-2">{cartData.length}</sup></span></Link>
@@ -123,7 +129,7 @@ console.log(calculate)
         </li>
        </>
         }
-        {adminrole &&
+        {isAdminLoggedIn &&
         <li className='navitem'>
           <Link className=" btn btn-primary mx-4" onClick={()=>handleAdminLogOut()} > logout {'\u00a0'} <i class="fa-solid fa-person-walking-dashed-line-arrow-right fa-xl"></i> </Link>
            </li>

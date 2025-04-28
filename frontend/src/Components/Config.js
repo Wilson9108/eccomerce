@@ -9,6 +9,7 @@ export default function Config(){
     const [indianCurrency,setIndianCurrency]=useState([])
     const [fullTitle , setFullTitle]=useState("")
     const [categoryData,setCategoryData]=useState([])
+    const [isAdminLoggedIn,setIsAdminLoggedIn]=useState(false)
 
 // fakestoreapiproductsfetching    
     
@@ -114,7 +115,7 @@ setIndianCurrency(obj)
     // console.log(cartData)
     return(
         <>
-        <myContext.Provider value={{categoryData,fetchData,getData,fetchProductData,cartData,ratingArray,incrementQuantity,decrementQuantity,removeProduct,totalQuantityCalculate,indianCurrency,handleTitle,fullTitle}}>
+        <myContext.Provider value={{isAdminLoggedIn,setIsAdminLoggedIn,categoryData,fetchData,getData,fetchProductData,cartData,ratingArray,incrementQuantity,decrementQuantity,removeProduct,totalQuantityCalculate,indianCurrency,handleTitle,fullTitle}}>
             <App/>
         </myContext.Provider>
         </>

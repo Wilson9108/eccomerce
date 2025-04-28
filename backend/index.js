@@ -24,6 +24,7 @@ app.use(express.json())
 const uploadFolder  = path.join(__dirname,'uploads')
 // console.log(uploadFolder)
 // app.use('/uploads',express.static(uploadFolder))
+console.log("emyi ra")
 
 app.get('/productsData',(req,res)=>{
     db.query("select * from products as p inner join category as c on p.cid=c.cid",(err,result)=>{
